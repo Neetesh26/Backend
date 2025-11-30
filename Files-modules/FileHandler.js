@@ -8,3 +8,7 @@ console.log('File written successfully');
 // read file ------->
 const data = fs.readFileSync('example.txt', 'utf-8');
 console.log('File content:', data);
+
+// append file ------>
+fs.appendFileSync("example.txt", " this is appended text\n", 'utf-8');
+console.log('File appended successfully');
