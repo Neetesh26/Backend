@@ -10,7 +10,7 @@ const data = fs.readFileSync('example.txt', 'utf-8');
 console.log('File content:', data);
 
 // append file ------>
-fs.appendFileSync("example.txt", " this is appended text\n", 'utf-8');
+fs.appendFileSync("example.txt", ` this is appended text with this time : ${new Date().toDateString()}\n`, 'utf-8');
 console.log('File appended successfully');
 
 // read file again to see appended content
