@@ -30,6 +30,8 @@ fs.readFile('example.txt', 'utf-8',(err ,result)=>{
     }
 })
 
+
+
 // copy file ------>
 fs.copyFileSync('example.txt' , 'example_copy1.txt');
 console.log('File copied successfully');
@@ -48,3 +50,13 @@ console.log('File deleted successfully');
 // rename file ------>
 // fs.renameSync('example_copy1.txt', 'renamed_example_copy2.txt');
 // console.log('File renamed successfully');
+
+
+
+
+
+
+
+
+const stats= fs.statSync('example.txt',);
+console.log(stats);
