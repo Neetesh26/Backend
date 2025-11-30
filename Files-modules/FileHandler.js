@@ -14,8 +14,21 @@ fs.appendFileSync("example.txt", " this is appended text\n", 'utf-8');
 console.log('File appended successfully');
 
 // read file again to see appended content
-const updatedData = fs.readFileSync('example.txt', 'utf-8');
-console.log('Updated File content:', updatedData);
+const ReadData = fs.readFileSync('example.txt', 'utf-8');
+console.log('Updated File content:', ReadData);
+
+
+
+// read file Asynchronously ------>
+fs.readFile('example.txt', 'utf-8',(err ,result)=>{
+    if(err){
+        console.error('Error reading file:', err);
+        return;
+    }
+    else{
+        console.log('Asynchronous File content:', result);
+    }
+})
 
 // copy file ------>
 fs.copyFileSync('example.txt' , 'example_copy1.txt');
