@@ -1,4 +1,5 @@
 /node_modules
 
 /log-Files/node_modules
+/Rest-APIs/node_modules
 /dist
