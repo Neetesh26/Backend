@@ -3,5 +3,6 @@
 /log-Files/node_modules
 /Rest-APIs/node_modules
 /Crud-Operations/node_modules
+/UrlShortner/node_modules
 
 /dist
