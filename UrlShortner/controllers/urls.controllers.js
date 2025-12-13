@@ -15,7 +15,10 @@ const createUrl = async (req, res) => {
             redirectUrl: urlData.url,
             urlVisited: []
         })
-        return res.status(200).json({ message: 'successfully generated short url', shortid: updatedData.shortId })
+        // return res.status(200).json({ message: 'successfully generated short url', shortid: updatedData.shortId })
+        return res.render('home', { 
+            shortId: updatedData.shortId 
+        });
     } catch (error) {
         console.log(error);
 

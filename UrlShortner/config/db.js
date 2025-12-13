@@ -2,7 +2,7 @@ const mongoose = require('mongoose')
 
 const dbConnection = async (req, res) => {
     try {
-        const connection = mongoose.connect(process.env.MONGODB_CONNECTION_ATLAS)
+        const connection = mongoose.connect(process.env.MONGODB_CONNECTION )
 
         if (connection) {
             console.log('mongodb Connected Successfully👍');
