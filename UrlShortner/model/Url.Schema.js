@@ -4,20 +4,23 @@ const urlSchema = new mongoose.Schema({
     shortId: {
         type: String,
         unique: true,
-        require: true
+        required: true
     },
     redirectUrl: {
         type: String,
-        unique: true,
+        required: true
     },
-     urlVisited: {
-        timestamp: []
-    }
-},
-    {
-        timestamps: true
-    })
+    urlVisited: [
+        {
+            timestamp: {
+                type: Date,
+                default: Date.now
+            }
+        }
+    ]
+}, {
+    timestamps: true
+})
 
 const urlModel = mongoose.model('url', urlSchema)
-
-module.exports = urlModel;
+module.exports = urlModel
