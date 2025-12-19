@@ -4,6 +4,7 @@
 /Rest-APIs/node_modules
 /Crud-Operations/node_modules
 /UrlShortner/node_modules
+/Authentication/node_modules
 /UrlShortner/.env
 .env
 /dist
