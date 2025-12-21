@@ -5,6 +5,8 @@
 /Crud-Operations/node_modules
 /UrlShortner/node_modules
 /Authentication/node_modules
+/Multer/backend/node_modules
+/Multer/frontend/node_modules
 /UrlShortner/.env
 .env
 /dist

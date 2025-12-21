@@ -4,7 +4,8 @@ const RoleBaseHandler = (...isRoll)=>{
         
         if(!isRoll.includes(req.user.role)){
             res.status(404).json({
-                message:'user not found & unauthorised user'
+                message:'user not found & unauthorised user',
+                imp:`sorry your role is ->  ${req.user.role}. you can't access this route..`
             })
         }
         next()
