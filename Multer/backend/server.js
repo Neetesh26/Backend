@@ -11,7 +11,7 @@ dbConnection();
 // app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 
 app.use(cors('*'))
-
+app.use(express.json())
 
 // save image in local machine folder --------------->
 
@@ -36,13 +36,14 @@ const upload = multer({ storage });
 app.post('/create', upload.single('photo'), async (req, res,file) => {
   const { name } = req.body
   const filename = req.file
+// console.log(req.body);
 
   // console.log("file is -->",file);
-  console.log(filename);
+  // console.log(filename);
   
   // const filename = req.file ? req.file.path : null
   // const filename = req.file ? req.file.buffer : null
-  console.log(filename);
+  // console.log(filename);
   
   const newUser = await userModel.create({
     name,
@@ -52,6 +53,44 @@ app.post('/create', upload.single('photo'), async (req, res,file) => {
 
   return res.send('data saved ');
 });
+
+app.get('/allusers',async ( req,res)=>{
+
+  try {
+        const allUsers = await userModel.find({ })
+        // console.log("res from  backend ",allUsers);
+        
+        return res.status(200).json({
+            message: 'Fetched all users.', users: allUsers
+        })
+
+    } catch (error) {
+        return res.status(400).json({ message: 'Internal Server error', error: error })
+    }
+})
+
+app.patch('/updateuser/:id', async (req, res) => {
+    const id = req.params.id;
+    // console.log(req.params.id);
+    
+    const newData = req.body;
+    // console.log(req.body);
+
+    try {
+        if (!id || !newData) {
+            return res.status(400).json({
+                message: 'Internal server error'
+            })
+        }
+        const updatedUser = await userModel.findByIdAndUpdate(id, newData, { new: true });
+        return res.status(200).json({
+            message: 'user Updated successfully',
+            newUser: updatedUser
+        })
+    } catch (error) {
+        return res.status(400).json({ message: 'Internal Server error', error: error })
+    }
+})
 
 app.listen(3000, () => {
   console.log("serveris running on port 3000");
