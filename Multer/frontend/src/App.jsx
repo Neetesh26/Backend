@@ -3,21 +3,29 @@ import axios from "axios";
 import { axiosInstance } from "./config/axiosInstance";
 import { createUserWithfile, getusers, updateUser } from '../apis/usersApis'
 const App = () => {
-  const [image, setimage] = useState(null);
-  const [naam, setnaam] = useState(null);
+  const [image, setimage] = useState([]);
+  const [naam, setnaam] = useState("");
   const [getAllusers, setgetAllusers] = useState([]);
   const [updatedname, setupdatedname] = useState('')
+
   const formData = new FormData();
 
   const submitHandler = async () => {
-    formData.append("photo", image);
     formData.append("name", naam);
+
+    // formData.append("photo", image);
+    // for multiple files upload---------->
+    image.forEach((elem)=>{
+      formData.append("photo", elem);
+    })
     // console.log("image->", image);
 
     console.log("formData ->", formData);
-
+    console.log("image",image);
+    
     // use tanstack Query later---------> 
       createUserWithfile(formData)
+      
   };
 
   const getallUserHandler = async () => {
@@ -44,7 +52,9 @@ const updatenameHandler = async (user_id)=>{
           onChange={(e) => setnaam(e.target.value)}
         />
         <input
-          onChange={(e) => setimage(e.target.files[0])}
+          // onChange={(e) => setimage(e.target.files[0])} // single file
+          multiple
+          onChange={(e) => setimage(Array.from(e.target.files))} // multiple files
           type="file"
           name="photo"
         />
@@ -67,8 +77,13 @@ const updatenameHandler = async (user_id)=>{
             />
             <button onClick={()=>updatenameHandler(elem._id)}>updated</button>
           </div>
+
+
+
         </div>
       ))}
+
+      
     </div>
   );
 };

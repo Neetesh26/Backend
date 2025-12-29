@@ -8,5 +8,9 @@
 /Multer/backend/node_modules
 /Multer/frontend/node_modules
 /UrlShortner/.env
+/HM/frontend/node_modules
+/HM/backend/node_modules
+/Streams/node_modules
+/socket.io/server/node_modules
 .env
 /dist
