@@ -12,5 +12,10 @@
 /HM/backend/node_modules
 /Streams/node_modules
 /socket.io/server/node_modules
+/book-management-api
+/google-AuthMern/node_modules
+/fullmern-auth/node_modules
+/MERN-auth/backend/node_modules
+/MERN-auth/frontend/node_modules
 .env
 /dist
