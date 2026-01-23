@@ -1,5 +1,16 @@
 {
+<<<<<<<< HEAD:Authentication/package.json
   "name": "authentication",
+========
+  "dependencies": {
+    "dotenv": "^17.2.3",
+    "ejs": "^3.1.10",
+    "express": "^5.2.1",
+    "mongoose": "^9.0.1",
+    "shortid": "^2.2.17"
+  },
+  "name": "urlshortner",
+>>>>>>>> 1fd1844ec19a21888d265f81767b1c7263d2e838:UrlShortner/package.json
   "version": "1.0.0",
   "description": "",
   "main": "index.js",

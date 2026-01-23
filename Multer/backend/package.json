@@ -12,9 +12,13 @@
   "description": "",
   "dependencies": {
     "cors": "^2.8.5",
+<<<<<<< HEAD
     "dotenv": "^17.2.3",
     "express": "^5.2.1",
     "imagekit": "^6.0.0",
+=======
+    "express": "^5.2.1",
+>>>>>>> 1fd1844ec19a21888d265f81767b1c7263d2e838
     "mongoose": "^9.0.2",
     "multer": "^2.0.2"
   }
