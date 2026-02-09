@@ -1,0 +1,18 @@
+
+
+operators in mongoDb------------------------
+
+1. $lookup -----> innerjoin, leftjoin, right join, fullouter join.
+
+2. $ne:_id --->fetch all users except this id eg.--- find{ id : {$ne: _id}}.
+
+3. $in:_id --->fetch specefic user whose id is :  eg.--- find{ id : {$in: _id}}.
+
+4. .select("-password") ---->send all data but except password.
+
+5. .populate()--->select model keyword whose id is depend other schema and 
+   .populate("selectid")---->  it is joining between two schema and fetch all data from linking schema like fetch users all details.
+   .populate({path("selectid)}, {"name", "profileImg"})
+
+6. { $inc:     }------------------>
+7. { $dec:     }------------------>
